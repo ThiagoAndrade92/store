@@ -4,6 +4,9 @@ import style from './Products.module.css';
 //Hook
 import { useProductContext } from '../../hook/useProductContext';
 
+//Image
+import Padrao from '../../assets/images/padrao.png'
+
 export const Products = () => {
 
    const { product, dispatchProduct } = useProductContext();
@@ -15,19 +18,20 @@ export const Products = () => {
             <h2>Produtos</h2>
 
             {product.map((p) => (
-            <div className={`${style.products_box} row`} key={p.id}>
-               <div className="col-12 col-md-6 col-lg-3">
-                  <div className={`${style.card}`}>
-                     <div className={`${style.img}`}>
-                        {/* <img src="" alt={p.name} /> */}
-                     </div>
-                     <div className={`${style.text}`}>
+            <div className={`${style.products_box} d-flex align-items-center justify-content-center`} key={p.id}>
+                  <div className={`${style.card} d-flex align-items-center justify-content-between p-2`}>
+                     <div className={`${style.text} d-flex flex-column  align-items-center justify-content-between`}>
                         <h3>{p.name}</h3>
                         <p>Preço: R$ {p.price}</p>
+                     <div className={`${style.btn}`}>
+                        <button>Adicionar</button>
+                     </div>
+                     </div>
+                     <div className={`${style.img}`}>
+                        <img src={Padrao} alt={p.name} />
                      </div>
                   </div>
                </div>
-            </div>
             ))}
          </div>
       </section>

@@ -13,7 +13,7 @@ import { ProductProvider } from './context/ProductProvider/index.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ProductProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/store'>
         <App />
       </BrowserRouter>
     </ProductProvider>
