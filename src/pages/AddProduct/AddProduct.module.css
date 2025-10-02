@@ -1,0 +1,16 @@
+.addproduct {
+   min-height: 100vh;
+}
+
+.addproduct form {
+   width: 400px;
+}
+
+.addproduct form h2 {
+   font-size: 2rem;
+   margin-bottom: 50px;
+}
+
+.labels {
+   margin-bottom: 30px;
+}
