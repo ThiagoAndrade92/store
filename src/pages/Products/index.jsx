@@ -7,8 +7,12 @@ import { useProductContext } from '../../hook/useProductContext';
 //Image
 import Padrao from '../../assets/images/padrao.png'
 
+//Components
+import { Btn } from '../../components/Btn';
+
 export const Products = () => {
 
+   //Hook
    const { product, dispatchProduct } = useProductContext();
 
    return (
@@ -24,13 +28,13 @@ export const Products = () => {
                         <h3>{p.name}</h3>
                         <p>Preço: R$ {p.price}</p>
                      <div className={`${style.btn}`}>
-                        <button>Adicionar</button>
+                        <Btn>Adicionar</Btn>
                      </div>
-                     </div>
+                     </div>{/* text */}
                      <div className={`${style.img}`}>
                         <img src={Padrao} alt={p.name} />
                      </div>
-                  </div>
+                  </div>{/* card */}
                </div>
             ))}
          </div>

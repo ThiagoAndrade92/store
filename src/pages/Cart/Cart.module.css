@@ -1,0 +1,48 @@
+.cart_card {
+   height: 250px;
+   background-color: orangered;
+   color: #fff;
+   border-radius: 4px;
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.img {
+   background-color: #f0f8ff;
+   height: 50%;
+   border-radius: 3px 3px 0 0;
+}
+
+.text h3 {
+   text-align: center;
+   padding: 5px;
+}
+
+.text p {
+   color: greenyellow;
+   padding-left: 20px;
+}
+
+.btns span,
+.btns button {
+   height: 20px;
+   width: 20px;
+   border: none;
+   border-radius: 5px;
+   
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+   transition: all .2s ease-in-out;
+}
+
+.btns button {
+   background-color: #ffff00;
+}
+
+.btns button:hover {
+   background-color: #dada02;
+   color: #fff;
+}
+
+.btns span {
+   background-color: #fff;
+   color: #000;
+}
