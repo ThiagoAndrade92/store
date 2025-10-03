@@ -16,5 +16,42 @@ export const store = {
          "price": 30
       }
    ],
-   "cart": []
+   "cart": [
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+      {
+         "id": 3,
+         "name": "Bolo de fubá",
+         "price": 30,
+         "qtd": 20
+      },
+   ]
 }
