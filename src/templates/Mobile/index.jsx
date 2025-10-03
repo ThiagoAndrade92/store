@@ -5,15 +5,17 @@ import { Route, Routes } from "react-router-dom";
 import { AddProduct } from "../../pages/AddProduct";
 import { Products } from "../../pages/Products";
 import { Cart } from "../../pages/Cart";
+import { NavMobile } from "../../components/NavMobile";
 
 export const Mobile = () => {
 
 
    return (
       <>
+      <NavMobile />
          <Routes>
             <Route path="/" element={<Products />} />
-            <Route path="/addProducts" element={<AddProduct />} />
+            <Route path="/createProducts" element={<AddProduct />} />
             <Route path='/cart' element={<Cart />} />
          </Routes>
       </>

@@ -1,0 +1,13 @@
+.nav {
+   border-bottom: 2px solid #ff4500;
+   max-width: 768px;
+   margin: 0 auto;
+}
+
+.nav a {
+   text-decoration: none;
+}
+
+.icon  {
+   color: black;
+}

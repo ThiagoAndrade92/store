@@ -1,9 +1,11 @@
 //Css
-import './App.css'
+import './App.css';
 
 //Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Mobile } from './templates/Mobile'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//Templates
+import { Mobile } from './templates/Mobile';
 
 function App() {
 
