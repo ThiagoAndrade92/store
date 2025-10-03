@@ -1,15 +1,18 @@
 .addproduct {
    min-height: 90vh;
+   position: relative;
 }
 
 .aviso {
-   position: fixed;
-   top: 10%;
-   right: 45%;
+   position: absolute;
+   top: 1%;
+   right: 50%;
+   transform: translate(50%);
 }
 
 .aviso p {
    padding: 5px;
+   width: auto;
    background-color: green;
    color: #fff;
    border-radius: 20px;
