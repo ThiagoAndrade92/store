@@ -16,14 +16,15 @@ export const ProductProvider = ({children}) => {
    //Function reducer
    const productReducer = (state, action) => {
       switch (action.type) {
-
+         case "ADD":
+            return [...state, action.payload]
+         default:
+           return state;
       }
    };
 
    //useReducer
    const [product, dispatchProduct] = useReducer(productReducer, intialProducts );
-
-   console.log(intialProducts)
 
    return (
       <ProductContext.Provider value={{product, dispatchProduct}}>
