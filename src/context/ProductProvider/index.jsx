@@ -17,7 +17,9 @@ export const ProductProvider = ({children}) => {
    const productReducer = (state, action) => {
       switch (action.type) {
          case "ADD":
-            return [...state, action.payload]
+            return [...state, action.payload];
+         case "REMOVE":
+            return state.filter(p => p.id !== action.payload);
          default:
            return state;
       }

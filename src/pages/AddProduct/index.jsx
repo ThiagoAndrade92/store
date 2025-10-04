@@ -21,7 +21,7 @@ export const AddProduct = () => {
    const [price, setPrice] = useState('');
    const [erroName, setErroName] = useState('');
    const [erroPrice, setErroPrice] = useState('');
-   const [toggle, setToggle] = useState(true);
+   const [toggle, setToggle] = useState(false);
 
    //Submit
    const handleSubmit = (e) => {
@@ -58,8 +58,6 @@ export const AddProduct = () => {
 
       setNameProduct('');
       setPrice('');
-
-      console.log('Funcionou!')
    };
 
 
