@@ -1,8 +1,8 @@
 //Css
 import style from './Cart.module.css';
 
-//Data
-import { store } from '../../../data/products';
+//Hook
+import { useCartContext } from '../../hook/useCartContext';
 
 //Components
 import { Btn } from '../../components/Btn';
@@ -13,7 +13,10 @@ import Padrao from '../../assets/images/padrao.png';
 export const Cart = () => {
 
    //Data
-   const cart = store.cart;
+   const {cart, dispatchCart} = useCartContext();
+
+   //Variaveis
+   const total = cart.reduce((acc, item) => acc + item.price * item.qtd, 0)
 
    return (
       <section className={`${style.cart}`}>
@@ -34,11 +37,14 @@ export const Cart = () => {
                            <p>R$: {item.price}</p>
                         </div>
                         <div className={`${style.btns} d-flex align-items-center justify-content-center p-2`}>
-                           <Btn className={`me-2 d-flex align-items-center justify-content-center`}>
+                           <Btn className={`me-2 d-flex align-items-center justify-content-center`}
+                           onClick={() => dispatchCart({type: "REMOVE", payload: item})}
+                           >
                               -
                            </Btn>
                            <span className='me-2 d-flex align-items-center justify-content-center'>{item.qtd}</span>
-                           <Btn className={`d-flex align-items-center justify-content-center`}>
+                           <Btn className={`d-flex align-items-center justify-content-center`}
+                           onClick ={() => dispatchCart({type: "ADD", payload: item})}>
                               +
                            </Btn>
                         </div>{/* btns */}
@@ -49,7 +55,7 @@ export const Cart = () => {
          <footer className={`${style.footer} p-2 d-flex align-items-center justify-content-around`}>
                <div className={`${style.total} d-flex align-items-center justify-content-between`}>
                   <p>TOTAL:</p>
-                  <span>0000</span>
+                  <span>R$ {total}</span>
                </div>
                <Btn>Finalizar</Btn>
          </footer>

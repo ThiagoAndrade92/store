@@ -3,23 +3,26 @@ import style from './Products.module.css';
 
 //Hook
 import { useProductContext } from '../../hook/useProductContext';
+import { useCartContext } from '../../hook/useCartContext';
 
 //Image
 import Padrao from '../../assets/images/padrao.png'
 
 //Components
 import { Btn } from '../../components/Btn';
+import { NavLink } from 'react-router-dom';
 
 export const Products = () => {
 
    //Hook
-   const { product, dispatchProduct } = useProductContext();
-
+   const { product } = useProductContext();
+   const { cart, dispatchCart } = useCartContext();
    return (
       <section className={`${style.products}`}>
          <div className="container">
 
             <h2>Produtos</h2>
+            <NavLink to={ '/cart'}>Cart</NavLink>
 
             {product.map((p) => (
             <div className={`${style.products_box} d-flex align-items-center justify-content-center`} key={p.id}>
@@ -28,7 +31,9 @@ export const Products = () => {
                         <h3>{p.name}</h3>
                         <p>Preço: R$ {p.price}</p>
                      <div className={`${style.btn}`}>
-                        <Btn>Adicionar</Btn>
+                        <Btn
+                        onClick={() => dispatchCart({type: "ADD", payload: p})}
+                        >Adicionar</Btn>
                      </div>
                      </div>{/* text */}
                      <div className={`${style.img}`}>

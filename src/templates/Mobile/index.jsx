@@ -14,7 +14,7 @@ export const Mobile = () => {
 
 
    return (
-      <>
+      <div className="d-md-none">
       <NavMobile />
          <Routes>
             <Route path="/" element={<Products />} />
@@ -22,6 +22,6 @@ export const Mobile = () => {
             <Route path='/cart' element={<Cart />} />
             <Route path="/removeProduct" element={<RemoveProduct />} />
          </Routes>
-      </>
+      </div>
    )
 };
