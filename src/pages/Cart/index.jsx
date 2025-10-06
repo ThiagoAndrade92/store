@@ -9,21 +9,43 @@ import { Btn } from '../../components/Btn';
 
 //Image
 import Padrao from '../../assets/images/padrao.png';
+import { useState } from 'react';
 
 export const Cart = () => {
+
+   //Function reset
+   const reset = () => {
+      dispatchCart({type: "RESET"})
+   };
 
    //Data
    const {cart, dispatchCart} = useCartContext();
 
    //Variaveis
-   const total = cart.reduce((acc, item) => acc + item.price * item.qtd, 0)
+   const total = cart.reduce((acc, item) => acc + item.price * item.qtd, 0);
+   const [toggle, setToggle] = useState(false);
+
+   //function remove
+   const remove = (item) => {
+      dispatchCart({type: "REMOVE", payload: item});
+
+      setToggle(true);
+      setTimeout(() => {
+         setToggle(false);
+      }, 3000);
+   }
 
    return (
       <section className={`${style.cart}`}>
          <div className="container">
+            {toggle ? (
+               <div className={`${style.tooltip}`}>
+                  <p>Produto removido!</p>
+               </div>
+            ): ''}
             <div className={`${style.top} d-flex align-items-center justify-content-between`}>
                <h2>Carrinho</h2>
-               <Btn>Limpar</Btn>
+               <Btn onClick={reset}>Limpar</Btn>
             </div>
             <div className={`${style.cart_box}`}>
 
@@ -38,7 +60,7 @@ export const Cart = () => {
                         </div>
                         <div className={`${style.btns} d-flex align-items-center justify-content-center p-2`}>
                            <Btn className={`me-2 d-flex align-items-center justify-content-center`}
-                           onClick={() => dispatchCart({type: "REMOVE", payload: item})}
+                           onClick={() => remove(item)}
                            >
                               -
                            </Btn>

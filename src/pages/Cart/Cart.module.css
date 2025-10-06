@@ -1,5 +1,22 @@
 .cart {
    padding-bottom: 90px;
+   position: relative;
+}
+
+.tooltip {
+   position: fixed;
+   top: 1%;
+   right: 50%;
+   transform: translate(50%);
+   
+}
+
+.tooltip p {
+   background-color: #ff0000;
+   color: #fff;
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+   padding: 3px;
+   border-radius: 20px;
 }
 
 .top {

@@ -4,7 +4,7 @@
 
 .tooltip {
    position: fixed;
-   top: 10%;
+   top: 1%;
    right: 50%;
    transform: translate(50%);
 }
