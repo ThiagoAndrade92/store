@@ -11,6 +11,8 @@ import Padrao from '../../assets/images/padrao.png'
 //Components
 import { Btn } from '../../components/Btn';
 import { NavLink } from 'react-router-dom';
+
+//React
 import { useState } from 'react';
 
 
@@ -22,7 +24,7 @@ export const Products = () => {
 
    //Variaveis
    const [toggle, setToggle] = useState(false);
-   const total = cart.reduce((acc, item) => acc + item.qtd, 0)
+   const total = cart.reduce((acc, item) => acc + item.qtd, 0);
 
    //Function AddProduct
    const addProduct = (p) => {

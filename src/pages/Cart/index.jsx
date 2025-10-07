@@ -24,6 +24,7 @@ export const Cart = () => {
    //Variaveis
    const total = cart.reduce((acc, item) => acc + item.price * item.qtd, 0);
    const [toggle, setToggle] = useState(false);
+   const [comprou, setComprou] = useState(false);
 
    //function remove
    const remove = (item) => {
@@ -35,14 +36,35 @@ export const Cart = () => {
       }, 3000);
    }
 
+   //Function finalizar
+   const finalizar = () => {
+      setComprou(true);
+
+      setTimeout(() => {
+         setComprou(false);
+      }, 3000);
+
+      dispatchCart({type: "RESET"})
+   }
+
    return (
       <section className={`${style.cart}`}>
          <div className="container">
+
+            {/* tooltip */}
             {toggle ? (
                <div className={`${style.tooltip}`}>
                   <p>Produto removido!</p>
                </div>
             ): ''}
+
+            {/* comprou */}
+            {comprou ? (
+               <div className={`${style.comprou}`}>
+                  <p className='d-flex align-items-center justify-content-center'>Obrigado pela preferência 🥰!</p>
+               </div>
+            ) : ''}
+
             <div className={`${style.top} d-flex align-items-center justify-content-between`}>
                <h2>Carrinho</h2>
                <Btn onClick={reset}>Limpar</Btn>
@@ -79,7 +101,9 @@ export const Cart = () => {
                   <p>TOTAL:</p>
                   <span>R$ {total}</span>
                </div>
-               <Btn>Finalizar</Btn>
+               <Btn 
+               onClick={finalizar}
+               >Finalizar</Btn>
          </footer>
          </div>{/* container */}
 
