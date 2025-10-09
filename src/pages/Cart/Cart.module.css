@@ -1,22 +1,5 @@
 .cart {
-   padding-bottom: 90px;
    position: relative;
-}
-
-.tooltip {
-   position: fixed;
-   top: 5%;
-   right: 50%;
-   transform: translate(50%);
-   
-}
-
-.tooltip p {
-   background-color: #ff0000;
-   color: #fff;
-   box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-   padding: 3px;
-   border-radius: 20px;
 }
 
 .comprou {
@@ -40,6 +23,11 @@
 .top {
    max-width: 600px;
    margin: 0 auto;
+}
+
+.vazio {
+   color: #a9a9a9;
+   font-size: 1.5rem;
 }
 
 .top button {

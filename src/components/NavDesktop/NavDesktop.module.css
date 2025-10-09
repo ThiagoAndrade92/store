@@ -1,0 +1,27 @@
+.nav_desktop {
+   margin-top: 50px;
+   border-right: 2px solid black;
+   padding: 5px 50px 5px 5px;
+}
+
+.nav_desktop a {
+   position: relative;
+   text-decoration: none;
+   margin-block: 10px;
+   color: black;
+}
+
+.nav_desktop a::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 0;
+   height: 3px;
+   background-color: #ff4500;
+   transition: all .3s ease-in-out;
+}
+
+.nav_desktop a:hover::after {
+   width: 100%;
+}

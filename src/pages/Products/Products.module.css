@@ -109,3 +109,6 @@
    border-radius: 50%;
    padding: 1px;
 }
+
+@media (min-with: 768px) {
+}
