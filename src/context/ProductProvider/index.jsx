@@ -1,17 +1,23 @@
 //React
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 //CreateContext
 export const ProductContext = createContext();
-
 
 //Data
 import { store } from "../../../data/products";
 
 export const ProductProvider = ({children}) => {
 
-   //Initial value
-   const intialProducts = store.products;
+   // Carregar do localStorage com proteção
+   const loadLocalProducts = () => {
+      try {
+         const saved = localStorage.getItem('produtos');
+         return saved ? JSON.parse(saved) : store.products;
+      } catch {
+         return store.products;
+      }
+   };
 
    //Function reducer
    const productReducer = (state, action) => {
@@ -26,7 +32,12 @@ export const ProductProvider = ({children}) => {
    };
 
    //useReducer
-   const [product, dispatchProduct] = useReducer(productReducer, intialProducts );
+   const [product, dispatchProduct] = useReducer(productReducer, loadLocalProducts());
+
+   //Salvar no localStorage
+   useEffect(() => {
+      localStorage.setItem('produtos', JSON.stringify(product));
+   }, [product]);
 
    return (
       <ProductContext.Provider value={{product, dispatchProduct}}>

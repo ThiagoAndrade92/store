@@ -9,7 +9,7 @@ import { Btn } from '../../components/Btn';
 
 //Image
 import Padrao from '../../assets/images/padrao.png';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 export const Cart = () => {
 
